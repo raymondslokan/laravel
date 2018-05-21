@@ -1,0 +1,15 @@
+// jQuery-ui
+//@import '~jquery-ui/themes/base/all.css';
+
+// Bootstrap
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+//@import '~bootstrap/dist/css/bootstrap.css';
+
+// main site font
+@font-face {
+    font-family: 'centuryGothic';
+    src: url('/css/fonts/centuryGothic/fonts/centuryGothic.eot');
+    src: local('?'), url('/css/fonts/centuryGothic/fonts/centuryGothic.woff') format('woff'), url('/css/fonts/centuryGothic/fonts/centuryGothic.ttf') format('truetype'), url('/css/fonts/centuryGothic/fonts/centuryGothic.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
