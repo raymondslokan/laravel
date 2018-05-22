@@ -5,9 +5,6 @@
     </div>
 <? endif; ?>
 
-<?// $this->load->helper('alert'); ?>
-<?// $this->load->helper('breadcrumb'); ?>
-
 <?= showHelpBlocks() ?>
 
 <nav class="navbar navbar-default">
@@ -24,7 +21,7 @@
             <? if(empty($_SESSION['organization']['shortName'])): ?>
                 <?= $_SESSION['config']['websiteShortName'] ?>
             <? else: ?>
-                <?= $_SESSION['organizations']['shortName'] ?>
+                <?= @$_SESSION['organization']['shortName'] ?>
             <? endif; ?>
         </a></span>
         <a href="" id="toggle-help-block" class="glyphicon glyphicon-info-sign headerIcon<? if(!session('showHelpBlocks')): ?> gray<? else: ?> blue<? endif; ?>"></a>
@@ -38,7 +35,7 @@
 		<ul class="nav navbar-nav navbar-right">
       <?//= \App\Common::menuSystemAdministrator() ?>
 			<?//=menuUserType()?>
-      
+
 			<!-- Authentication Links -->
 			@guest
 				<li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>

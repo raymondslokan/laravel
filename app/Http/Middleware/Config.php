@@ -9,7 +9,7 @@ class Config
   var $settings = array(
 		"websiteName" 						=> array("Easy EHR","Development Easy EHR")
 		,"websiteShortName" 				=> array("EasyEHR","DevEasyEHR")
-		,"websiteNotice"					=> array("The site will be going down on Monday, August 8, 2017 at 12:00pm for about 2 hours.")
+		,"websiteNotice"					=> array("The site will be going down on Monday, August 8, 2017 at 12:00pm for about 2 hours.","adfasdf")
 		,"appPath" 							=> array("/var/www/ehr","C:\Users\Raymond\Desktop\ehr")
 		,"imagePath" 						=> array("/var/www/ehr/images","C:\Users\Raymond\Desktop\ehr\images")
 		,"dataPath" 						=> array("/var/www/ehr_data","C:\Users\Raymond\Desktop/ehr_data")
@@ -69,6 +69,7 @@ class Config
     function load_config()
   	{
       $index = ($_SERVER['SERVER_ADDR'] == "127.0.0.1") ? 1 : 0;
+      $_SESSION['config'] = array();
 
       // load config
   		foreach($this->settings as $k => $v)

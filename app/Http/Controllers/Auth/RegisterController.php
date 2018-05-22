@@ -56,29 +56,29 @@ class RegisterController extends Controller
             'username' => 'required|string|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
             'terms' => 'accepted',
-            'g-recaptcha-response' => function($attribute, $value, $fail) {
-                // Get cURL resource
-                $curl = curl_init();
-                // Set some options - we are passing in a useragent too here
-                curl_setopt_array($curl, array(
-                  CURLOPT_RETURNTRANSFER => 1,
-                  CURLOPT_URL => 'https://www.google.com/recaptcha/api/siteverify',
-                  CURLOPT_POST => 1,
-                  CURLOPT_POSTFIELDS => array(
-                      'secret' => '6LfqiFkUAAAAAKn2LqB-S7ETW1UO4UQPcnwTBvZf',
-                      'response' => $value
-                  )
-                ));
-                // Send the request & save response to $resp
-                // looking for $resp->success to be true
-                $resp = json_decode(curl_exec($curl));
-                // Close request to clear up some resources
-                curl_close($curl);
-
-                if (!$resp->success) {
-                    return $fail('Recaptcha failed, please try again.');
-                }
-            },
+            // 'g-recaptcha-response' => function($attribute, $value, $fail) {
+            //     // Get cURL resource
+            //     $curl = curl_init();
+            //     // Set some options - we are passing in a useragent too here
+            //     curl_setopt_array($curl, array(
+            //       CURLOPT_RETURNTRANSFER => 1,
+            //       CURLOPT_URL => 'https://www.google.com/recaptcha/api/siteverify',
+            //       CURLOPT_POST => 1,
+            //       CURLOPT_POSTFIELDS => array(
+            //           'secret' => '6LfqiFkUAAAAAKn2LqB-S7ETW1UO4UQPcnwTBvZf',
+            //           'response' => $value
+            //       )
+            //     ));
+            //     // Send the request & save response to $resp
+            //     // looking for $resp->success to be true
+            //     $resp = json_decode(curl_exec($curl));
+            //     // Close request to clear up some resources
+            //     curl_close($curl);
+            //
+            //     if (!$resp->success) {
+            //         return $fail('Recaptcha failed, please try again.');
+            //     }
+            // },
         ]);
     }
 
