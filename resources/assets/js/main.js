@@ -3,7 +3,6 @@ window.$ = window.jQuery = $;
 
 //import 'jquery-ui/ui/widgets/datepicker.js';
 window.Popper = require('popper.js')
-require('bootstrap')
 
 function searchZip(myZip)
 {

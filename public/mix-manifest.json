@@ -2,7 +2,9 @@
     "/js/main.js": "/js/main.js",
     "/css/imports.css": "/css/imports.css",
     "/css/style.css": "/css/style.css",
+    "/css/_bootstrap.css": "/css/_bootstrap.css",
     "/js/simplewebrtc.latest.v2.js": "/js/simplewebrtc.latest.v2.js",
+    "/js/bootstrap.js": "/js/bootstrap.js",
     "/js/all.js": "/js/all.js",
     "/css/all.css": "/css/all.css"
 }

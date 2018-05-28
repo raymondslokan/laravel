@@ -18,13 +18,13 @@ class Registration extends Migration
           $table->renameColumn('name', 'fname');
           $table->string('lname',100)->after('name');
           $table->string('username',100)->after('email');
-          $table->string('type',100)->after('email');
-          $table->string('status',100)->after('email');
-          $table->integer('loginAttempts')->after('email');
-          $table->integer('loginAttemptTimeout')->after('email');
-          $table->string('passwordRecoveryKey',100)->after('email');
-          $table->integer('passwordRecoveryTimeout')->after('email');
-          $table->integer('referralId')->after('email');
+          $table->string('type',100)->nullable()->after('email');
+          $table->string('status',100)->nullable()->after('email');
+          $table->integer('loginAttempts')->after('email')->default(0);
+          $table->integer('loginAttemptTimeout')->after('email')->default(0);
+          $table->string('passwordRecoveryKey',100)->nullable()->after('email');
+          $table->integer('passwordRecoveryTimeout')->after('email')->default(0);
+          $table->integer('referralId')->after('email')->default(0);
           $table->string('timezone',100)->after('email');
         });
     }
